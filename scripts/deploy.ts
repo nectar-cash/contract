@@ -1,4 +1,4 @@
-import { ethers } from 'hardhat'
+import { ethers, network, run } from 'hardhat'
 
 async function main() {
   const NectarVault = await ethers.getContractFactory('NectarVault')
@@ -13,6 +13,20 @@ async function main() {
   await nectarVault.deployed()
   // await nonReceiving.deployed()
   // await receiving.deployed()
+
+  if (network.name === 'goerli') {
+    const WAIT_BLOCK_CONFIRMATIONS = 6
+    await nectarVault.deployTransaction.wait(WAIT_BLOCK_CONFIRMATIONS)
+
+    console.log(`Contract deployed to ${nectarVault.address} on ${network.name}`)
+
+    console.log(`Verifying contract on Etherscan...`)
+
+    await run(`verify:verify`, {
+      address: nectarVault.address,
+      constructorArguments: [],
+    })
+  }
 }
 
 // We recommend this pattern to be able to use async/await everywhere and properly handle errors.

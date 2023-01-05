@@ -2649,6 +2649,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: abce82d99b45e2ebbd42625a78cadbfafe03072c15e6538b6a3a7ed204b6e091c0de929dd09231edc61f78afbdcd5b8a2f21b9e933e8ab27d75bee865a0e58c9
+  languageName: node
+  linkType: hard
+
 "ecc-jsbn@npm:~0.1.1":
   version: 0.1.2
   resolution: "ecc-jsbn@npm:0.1.2"
@@ -5307,6 +5314,7 @@ __metadata:
     "@types/mocha": "npm:^10.0.0"
     "@types/node": "npm:^18.11.8"
     chai: "npm:^4.3.6"
+    dotenv: "npm:^16.0.3"
     eth-gas-reporter: "npm:^0.2.25"
     ethers: "npm:^5.7.2"
     hardhat: "npm:^2.12.1"
